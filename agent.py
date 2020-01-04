@@ -1,7 +1,10 @@
-import os, sys, psutil
+import sys
 
 def main():
-    print("Hello, World!")
+    if sys.platform == "linux":
+        print("Hello, Linux!")
+    else:
+        print("OS not supported")
 
 
 if __name__ == "__main__":
