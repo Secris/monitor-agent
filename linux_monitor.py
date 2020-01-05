@@ -1,7 +1,7 @@
 import psutil
 
 def getCPU():
-    return psutil.cpu_times_pertent(interval=0.1)
+    return psutil.cpu_percent(interval=0.1)
     
 def getMEM():
     return psutil.virtual_memory()
