@@ -15,8 +15,11 @@ def uptime():
     with open('/proc/uptime', 'r') as f:
         uptime_seconds = float(f.readline().split()[0])
         uptime_string = str(timedelta(seconds = uptime_seconds))
-    
-    return uptime_string[:uptime_string.index('.')]
+
+    if len(uptime_string) > 8:
+        return uptime_string[:uptime_string.index('.')]
+    else:
+        return uptime_string
     
 def main():
     mem = getMEM()

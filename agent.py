@@ -8,8 +8,12 @@ def main():
         return 1
         
     while(True):
-        print(monitor.getCPU())
-        time.sleep(5)
+        mem_used = monitor.getMEM()
+        cpu_used = monitor.getCPU()
+        up_time = monitor.uptime()
+
+        print(str(cpu_used) + "\t" + str(mem_used) + "\t" + str(up_time))
+        time.sleep(1)
 
 
 if __name__ == "__main__":
