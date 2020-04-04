@@ -16,10 +16,7 @@ def uptime():
         uptime_seconds = float(f.readline().split()[0])
         uptime_string = str(timedelta(seconds = uptime_seconds))
 
-    if len(uptime_string) > 8:
-        return uptime_string[:uptime_string.index('.')]
-    else:
-        return uptime_string
+    return uptime_seconds
     
 def main():
     mem = getMEM()
