@@ -13,7 +13,7 @@ def main():
         up_time = monitor.uptime()
 
         print(str(cpu_used) + "\t" + str(mem_used) + "\t" + str(up_time))
-        time.sleep(1)
+        time.sleep(5)
 
 
 if __name__ == "__main__":
