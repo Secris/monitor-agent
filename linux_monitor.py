@@ -1,4 +1,4 @@
-import psutil
+import psutil, platform
 from datetime import timedelta
 
 def getCPU():
@@ -14,10 +14,12 @@ def getMEM():
 def uptime():
     with open('/proc/uptime', 'r') as f:
         uptime_seconds = float(f.readline().split()[0])
-        uptime_string = str(timedelta(seconds = uptime_seconds))
 
     return uptime_seconds
     
+def name():
+    return platform.node()
+
 def main():
     mem = getMEM()
     cpu = getCPU()

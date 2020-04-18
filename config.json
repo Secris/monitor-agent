@@ -1,0 +1,10 @@
+{
+    "frequency": 5,
+    "attributes": {
+        "hostname": true,
+        "cpu": true,
+        "ram": true,
+        "disk": false,
+        "uptime": true
+    }
+}

@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, json
 
 def main():
     if sys.platform == "linux":
@@ -11,9 +11,10 @@ def main():
         mem_used = monitor.getMEM()
         cpu_used = monitor.getCPU()
         up_time = monitor.uptime()
+        hostname = monitor.name()
 
-        print(str(cpu_used) + "\t" + str(mem_used) + "\t" + str(up_time))
-        time.sleep(5)
+        print(str(cpu_used) + "\t" + str(mem_used) + "\t" + str(up_time) + "\t" + str(hostname))
+        time.sleep(1)
 
 
 if __name__ == "__main__":
