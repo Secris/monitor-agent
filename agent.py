@@ -1,6 +1,8 @@
 import sys, time, json
 
 def main():
+    data = {}
+
     if sys.platform == "linux":
         import linux_monitor as monitor
     else:
@@ -8,12 +10,14 @@ def main():
         return 1
         
     while(True):
-        mem_used = monitor.getMEM()
-        cpu_used = monitor.getCPU()
-        up_time = monitor.uptime()
-        hostname = monitor.name()
+        data["mem_used"] = monitor.getMEM()
+        data["cpu_used"] = monitor.getCPU()
+        data["up_time"] = monitor.uptime()
+        data["hostname"] = monitor.name()
 
-        print(str(cpu_used) + "\t" + str(mem_used) + "\t" + str(up_time) + "\t" + str(hostname))
+        data_json = json.dumps(data)
+
+        print(data_json)
         time.sleep(1)
 
 
