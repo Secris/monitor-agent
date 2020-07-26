@@ -1,14 +1,9 @@
 import sys, time, json
+import monitor
 
 def main():
     data = {}
 
-    if sys.platform == "linux":
-        import linux_monitor as monitor
-    else:
-        print("OS not supported")
-        return 1
-        
     while(True):
         data["mem_used"] = monitor.getMEM()
         data["cpu_used"] = monitor.getCPU()

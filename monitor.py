@@ -1,5 +1,6 @@
 import psutil, platform
 from datetime import timedelta
+from uptime import uptime
 
 def getCPU():
     return psutil.cpu_percent(interval=0.1)
@@ -11,11 +12,8 @@ def getMEM():
     
     return round(virt_mem, 2)
 
-def uptime():
-    with open('/proc/uptime', 'r') as f:
-        uptime_seconds = float(f.readline().split()[0])
-
-    return uptime_seconds
+def system_uptime():
+    return uptime()
     
 def name():
     return platform.node()
